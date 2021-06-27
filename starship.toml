@@ -1,0 +1,48 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[→](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+#The line_break module separates the prompt into two lines.
+[line_break]
+disabled = true
+
+#Directory
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+
+#Battery
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]  # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+
+#NodeJS
+[nodejs]
+disabled = true
+
+#GIT
+[git_branch]
+symbol = ""
+truncation_length = 7
+truncation_symbol = ""
+format = '\[[$symbol$branch]($style)\]'
+
+#RAM
+[memory_usage]
+disabled = false
+threshold = 80
+symbol = " "
+style = "bold dimmed green"
